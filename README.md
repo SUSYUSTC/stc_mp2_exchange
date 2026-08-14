@@ -33,6 +33,10 @@ orbital localizers (`orbopt`).
 
     pip install numpy scipy torch numba pyscf psutil
 
+Run the scripts from the repository root: `stc_cc` is imported as a local
+package, and the cached SCF and reference files are written to `data_MP2/`
+relative to the working directory.
+
     python scf.py lattice/BN_2x2.xyz cc-pvtz --save
     python mp2.py lattice/BN_2x2.xyz cc-pvtz --save          # reference, optional
     python laplace_mp2_exchange_stc.py lattice/BN_2x2.xyz cc-pvtz 3e-4 \
