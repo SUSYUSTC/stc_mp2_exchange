@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+data_MP2/
+cache_*/
+*.chk
