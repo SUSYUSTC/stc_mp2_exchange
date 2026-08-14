@@ -6,7 +6,7 @@ this directory and writes a `.png`. `config.py` fixes the colour scheme,
 
 | script | data | figure |
 | --- | --- | --- |
-| `main_plot_unbiaseness.py` | `data_unbiasedness` | `unbiaseness.png` |
+| `main_plot_unbiasedness.py` | `data_unbiasedness` | `unbiasedness.png` |
 | `main_plot_threshold.py` | `data_threshold` | `threshold.png` |
 | `main_plot_scaling.py` | `data_scaling` | `scaling.png` |
 | `main_plot_samples.py` | `data_scaling` | `samples.png` |

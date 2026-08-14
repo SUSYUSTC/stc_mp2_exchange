@@ -79,6 +79,6 @@ plt.xlim(-0.02, 0.02)
 plt.xticks([-0.02, 0, 0.02], ['-0.02', '0', '0.02'])
 
 plt.tight_layout()
-plt.savefig("unbiaseness.png", dpi=200)
-plt.savefig("unbiaseness.pdf")
+plt.savefig("unbiasedness.png", dpi=200)
+plt.savefig("unbiasedness.pdf")
 plt.close()
