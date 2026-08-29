@@ -26,14 +26,14 @@ def plot(x, y, color, marker, label):
                 edgecolors='k', linewidths=0.6)
 
 
-# ------------------------------------------------- (a) size of the exact domain
+# ----------------------------------------- (a) size of the deterministic domain
 plt.sca(axes[0])
 plot(screen, c['nvir_per_occ_rms'], config.color_exact, 'o', None)
 plt.xscale('log')
 plt.ylim(0, 1150)
 plt.xlabel('Screening threshold $\\tau$')
 plt.ylabel('Virtuals per occupied (rms)')
-plt.title('Size of the exact domain')
+plt.title('Size of the deterministic domain')
 
 # ---------------------------------------------------------------- (b) timing
 plt.sca(axes[1])
