@@ -21,8 +21,8 @@ label = [f"{r[col['system']]}/{r[col['basis']][-2].upper()}Z\n{r[col['nao']]} AO
 order = np.argsort(get('nao'))
 
 series = [(get('t_pyscf_MP2'), config.color_exact, 'PySCF DF-MP2'),
-          (get('t_laplace') + get('t_direct'), config.color_1, 'exact MP2 direct'),
-          (get('t_exchange'), config.color_STC, 'STC MP2 exchange')]
+          (get('t_laplace') + get('t_direct'), config.color_1, 'LT-MP2 direct'),
+          (get('t_exchange'), config.color_STC, 'STC-MP2 exchange')]
 
 x = np.arange(len(raw))
 width = 0.27

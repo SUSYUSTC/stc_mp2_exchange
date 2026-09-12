@@ -49,17 +49,20 @@ x = nbf[s]
 t_scf = get('t_SCF_2it_incore')[s]
 t_scf = np.where(np.isfinite(t_scf), t_scf, get('t_SCF_2it_outcore')[s]) / 2
 series = [
-    (t_scf, config.color_2, 'HF (per iteration)'),
+    (t_scf, config.color_2, 'PySCF DF-HF (per iteration)'),
     (get('t_pyscf_MP2')[s], config.color_exact, 'PySCF DF-MP2'),
-    (get('t_STC_laplace')[s] + get('t_STC_direct')[s], config.color_1, 'exact MP2 direct'),
-    (get('t_STC_exchange')[s], config.color_STC, 'STC MP2 exchange'),
-    (get('t_DLPNO_tight')[s], config.color_DLPNO, 'DLPNO-MP2'),
+    (get('t_STC_laplace')[s] + get('t_STC_direct')[s], config.color_1, 'LT-MP2 direct'),
+    (get('t_STC_exchange')[s], config.color_STC, 'STC-MP2 exchange'),
+    (get('t_DLPNO_tight')[s], config.color_DLPNO, 'ORCA DLPNO-MP2'),
 ]
 for y, color, label in series:
     plot(x, y, color, 's', label)
     print(f'{label:22s} N^{powerfit(x, y):.2f}')
 plt.xscale('log')
 plt.yscale('log')
+# headroom so the legend clears the topmost curve
+ymin, ymax = plt.ylim()
+plt.ylim(ymin, ymax * 3)
 plt.xlabel('Number of basis functions')
 plt.ylabel('Wall time (s)')
 plt.title('Timing of 2D BN sheets')

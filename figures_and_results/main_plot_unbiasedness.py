@@ -13,11 +13,13 @@ def gauss(x):
     return 1 / np.sqrt(2 * np.pi) * np.exp(-x**2 / 2)
 
 
-E_mp2 = np.loadtxt("./data_unbiasedness", skiprows=3, usecols=1)
-ref = -2.351443749949e+00
+# the exchange is the only sampled quantity; the direct term and the quadrature
+# are deterministic, so this error is identical to the total MP2 error
+E_exchange = np.loadtxt("./data_unbiasedness", skiprows=3, usecols=0)
+ref = 1.164952284432e+00        # E_exchange_pyscf, BN 2x2 / cc-pVTZ, frozen core
 target_error = 3e-4
 
-error = E_mp2 - ref
+error = E_exchange - ref
 mean = error.mean()
 std = error.std(ddof=1)
 sem = std / np.sqrt(len(error))
